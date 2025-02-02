@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CRUD</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class ="crud">
+            <div class="head">
+                <h3>CRUD</h3>
+                <p>product management system</p>
+            </div>
+            <div class ="inputs">             
+                <input placeholder="Tilte" type= "text" id ="title">
+                <div id = "titleErrorMsg" >
+                    <i class="fa-solid fa-circle-exclamation fa-beat" style="color: #f01000;"></i> 
+                    <span >Title Is Required</span>
+                </div>              
+                <div class ="price">
+                    <input placeholder="Price"  type= "number" id ="price"  onkeyup="getTotal()">
+                    <input placeholder="Taxes"  type= "number" id ="taxes" onkeyup="getTotal()" >
+                    <input placeholder="Ads" type= "number" id ="ads" onkeyup="getTotal()">
+                    <input placeholder="Discount"  type= "number" id ="discount" onkeyup="getTotal()">
+                    <input placeholder="Total :" id="total" disabled></input>
+                    <div id = "priceErrorMsg" >
+                        <i class="fa-solid fa-circle-exclamation fa-beat" style="color: #f01000;"></i> 
+                        <span >Price Is Required</span>
+                    </div>
+                </div>
+                <input placeholder="Count" type= "number" id ="count" >
+                <div id = "countErrorMsg" >
+                    <i class="fa-solid fa-circle-exclamation fa-beat" style="color: #f01000;"></i> 
+                    <span >count Is Required</span>
+                </div>
+                <input placeholder="Category" type= "text" id ="category" >
+                <div id = "categoryErrorMsg" >
+                    <i class="fa-solid fa-circle-exclamation fa-beat" style="color: #f01000;"></i> 
+                    <span >category Is Required</span>
+                </div>
+                <button id="create">Create</button>
+            </div>
+            <div class =outputs>
+                <div class="searchBlock">
+                    <input id="search" placeholder="Sreach">
+                    <div class="searchBtns">
+                        <button id="searchByTitle" onclick="searchIteam(this.id)">Search By Title</button>
+                        <button id="searchByCategory" onclick="searchIteam(this.id)">Search By Category</button>
+                    </div>
+                </div>
+                <table id="products">
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>ads</th>
+                        <th>discount</th>
+                        <th>total</th>
+                        <th>category</th>
+                        <th>count</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                    <tbody id="table-body">                     
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
